@@ -36,6 +36,18 @@ async def set(interaction: Interaction):
     chid = interaction.channel.id
     await interaction.response.send_message("変更しました！")
 
+class usersel(ui.UserSelect):
+    def __init__(self):
+        super().__init__()
+
+    async def callback(self, interaction:Interaction):
+        await interaction.response.send_message(f"{self.values[0].name}")
+
+@tree.command(name="user", description="ゆーざーひょうじ")
+async def user(interaction: Interaction):
+    view=ui.View()
+    view.add_item(usersel())
+    await interaction.response.send_message(content="表示するぞ", view=view)
 
 async def main():
     # start the client

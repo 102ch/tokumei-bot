@@ -36,4 +36,4 @@ jobs:
         with:
           hosts: 'root@mc.k1h.dev:5001'
           privateKey: ${{ secrets.SSH_PRIVATEKEY }}
-          command: cd tokumei-bot; git pull; docker pull ghcr.io/102ch/tokumei-bot:latest; docker-compose -f docker-compose-release.yml up -d
+          command: cd tokumei-bot; git pull; docker pull ghcr.io/102ch/tokumei-bot:latest; docker-compose -f docker-compose-release.yaml up -d

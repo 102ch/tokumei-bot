@@ -30,8 +30,7 @@ async def on_message(message: discord.Message):
         await cl.send(message.content)
         print(message.content)
         if not len(message.attachments) == 0:
-            for attachment in message.attachments:
-                await cl.send(attachment.url)
+            await cl.send(massage.attachments[0])
 
 @tree.command(name="set", description="匿名ちゃんがこのチャンネルに降臨するよ！")
 async def set(interaction: Interaction):

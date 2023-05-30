@@ -22,15 +22,17 @@ async def on_ready():
 
 @bot.event
 async def on_message(message: discord.Message):
-    #print(message)
     if message.author.bot:
         return
     if(message.guild == None):
         cl = bot.get_channel(chid)
-        await cl.send(message.content)
-        print(message.content)
-        if not len(message.attachments) == 0:
-            await cl.send(massage.attachments[0])
+        if  message.content:
+            await cl.send(message.content)
+            #print(message.content)
+        if message.attachments:
+            for attachment in message.attachments:
+                #print (attachment.url)
+                await cl.send(attachment.url)
 
 @tree.command(name="set", description="匿名ちゃんがこのチャンネルに降臨するよ！")
 async def set(interaction: Interaction):

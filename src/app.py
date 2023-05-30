@@ -29,6 +29,8 @@ async def on_message(message: discord.Message):
         cl = bot.get_channel(chid)
         await cl.send(message.content)
         print(message.content)
+        for attachment in message.attachments
+            print(attachment.url)
 
 @tree.command(name="set", description="匿名ちゃんがこのチャンネルに降臨するよ！")
 async def set(interaction: Interaction):

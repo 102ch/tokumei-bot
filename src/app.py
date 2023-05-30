@@ -29,7 +29,7 @@ async def on_message(message: discord.Message):
         cl = bot.get_channel(chid)
         await cl.send(message.content)
         print(message.content)
-        if not len(message.attachments == 0):
+        if not len(message.attachments) == 0:
             for attachment in message.attachments:
                 await cl.send(attachment.url)
 

@@ -1,1 +1,2 @@
 discord.py==2.2.3
+audioop-lts; python_version>='3.13'
